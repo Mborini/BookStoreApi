@@ -22,6 +22,8 @@ const BookSchema = new mongoose.Schema({
     maxlength: 200,
     minlength: 1,
   },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }, // مهم
+
 });
 
 const validation = (obj) => {

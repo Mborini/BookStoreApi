@@ -9,11 +9,10 @@ const logger = require("./middlewares/logger");
 const errorHandler = require("./middlewares/errorHandler");
 const notFound = require("./middlewares/notFound");
 const mongoose = require("mongoose");
-const dotEnv = require("dotenv").config();;
+const dotEnv = require("dotenv").config();
 
 // إعداد تطبيق Express
 const app = express();
-
 
 app.use(databaseMiddleware);
 
@@ -29,8 +28,8 @@ app.use("/api/auth", authPath);
 app.use("/api/users", userPath);
 
 //middelware error handling
-app.use(notFound)
-app.use(errorHandler)
+app.use(notFound);
+app.use(errorHandler);
 // بدء الخادم
 app.listen(process.env.PORT, () => {
   console.log("Server is running on port 3000");
